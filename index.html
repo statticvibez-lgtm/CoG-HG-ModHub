@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Arcade Hub</title>
+    <title>CoG/HG Mod Hub</title>
     <style>
         :root {
             --bg-color: #0b0f19;
@@ -52,7 +52,7 @@
             max-width: 1000px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
             padding: 0 1rem;
         }
@@ -79,11 +79,30 @@
             flex-direction: column;
         }
 
+        /* Flex container to place the icon and title side-by-side */
+        .card-header-inline {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        /* Fixed modern square sizing for game icons */
+        .card-icon {
+            width: 64px;
+            height: 64px;
+            object-fit: cover;
+            border-radius: 12px; /* Smooth squircle corners */
+            background-color: #0f172a; /* Fallback color while loading */
+            border: 1px solid #475569;
+            flex-shrink: 0; /* Prevents the image from squeezing */
+        }
+
         .card-title {
-            font-size: 1.5rem;
+            font-size: 1.35rem;
             font-weight: 700;
-            margin-bottom: 0.75rem;
             letter-spacing: -0.01em;
+            line-height: 1.2;
         }
 
         .card-description {
@@ -123,18 +142,26 @@
         <!-- Game 1 -->
         <article class="card">
             <div class="card-content">
-                <h2 class="card-title">Game One Title</h2>
+                <div class="card-header-inline">
+                    <!-- Replace src with your actual icon file path -->
+                    <img class="card-icon" src="game-one/assets/icon.png" alt="Game One Icon">
+                    <h2 class="card-title">The Lawless Ones</h2>
+                </div>
                 <p class="card-description">A brief, catchy description of what your first game is about. Explain the genre, controls, or objective.</p>
-                <a href="game one/" class="btn">Play Now</a>
+                <a href="game-one/" class="btn">Play Now</a>
             </div>
         </article>
 
         <!-- Game 2 -->
         <article class="card">
             <div class="card-content">
-                <h2 class="card-title">Game Two Title</h2>
+                <div class="card-header-inline">
+                    <!-- Replace src with your actual icon file path -->
+                    <img class="card-icon" src="game-two/assets/icon.png" alt="Game Two Icon">
+                    <h2 class="card-title">Game Two Title</h2>
+                </div>
                 <p class="card-description">A brief, catchy description of what your second game is about. Keep players interested.</p>
-                <a href="game two/" class="btn">Play Now</a>
+                <a href="game-two/" class="btn">Play Now</a>
             </div>
         </article>
 
