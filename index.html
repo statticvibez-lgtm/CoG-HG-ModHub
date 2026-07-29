@@ -2,14 +2,144 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CoG/HG Mod Host</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Arcade Hub</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-color: #3b82f6;
+            --accent-hover: #2563eb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.5;
+            padding: 4rem 1rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 0 1rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid #334155;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+            border-color: #475569;
+        }
+
+        .card-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+        }
+
+        .card-description {
+            color: var(--text-muted);
+            font-size: 0.975rem;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+        }
+    </style>
 </head>
 <body>
-    <h1>The Mods</h1>
-    <ul>
-        <!-- Use relative links to point to the subfolders -->
-        <li><a href="game one/">Play Game One</a></li>
-        <li><a href="game two/">Play Game Two</a></li>
-    </ul>
+
+    <header>
+        <h1>Mod List</h1>
+        <p>Select a game below to start playing directly in your browser.</p>
+    </header>
+
+    <main class="grid">
+        <!-- Game 1 -->
+        <article class="card">
+            <div class="card-content">
+                <h2 class="card-title">Game One Title</h2>
+                <p class="card-description">A brief, catchy description of what your first game is about. Explain the genre, controls, or objective.</p>
+                <a href="game one/" class="btn">Play Now</a>
+            </div>
+        </article>
+
+        <!-- Game 2 -->
+        <article class="card">
+            <div class="card-content">
+                <h2 class="card-title">Game Two Title</h2>
+                <p class="card-description">A brief, catchy description of what your second game is about. Keep players interested.</p>
+                <a href="game two/" class="btn">Play Now</a>
+            </div>
+        </article>
+
+        <!-- Add more cards here for future games -->
+    </main>
+
 </body>
 </html>
