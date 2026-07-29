@@ -1,1 +1,1 @@
-# Lawless Ones Mod
+# CoG/HG Mod Host
